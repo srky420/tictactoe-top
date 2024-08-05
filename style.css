@@ -87,6 +87,20 @@ td {
   font-weight: 800;
 }
 
+@keyframes win {
+  0% {
+    transform: scale(1);
+    background-color: white;
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+    background-color: lightgreen;
+  }
+}
+
 td:hover {
   cursor: pointer;
   border: 1px solid black;

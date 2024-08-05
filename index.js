@@ -37,8 +37,7 @@ const game = (function () {
       display.renderBoard(board.getBoard());
       const { win, coords } = board.checkForWin(currentPlayer);
       if (win) {
-        display.playerWin(coords);
-        winRound();
+        winRound(coords);
       } else if (board.checkForTie()) {
         tieRound();
       } else {
@@ -50,7 +49,7 @@ const game = (function () {
   };
 
   // Player win
-  const winRound = () => {
+  const winRound = (coords) => {
     console.log(`Player ${currentPlayer} WON!`);
     gameOver = true;
     display.renderMessage(
@@ -60,6 +59,7 @@ const game = (function () {
     );
     stats.increaseScore(players.indexOf(currentPlayer));
     display.renderStats(stats.getStats());
+    display.playerWin(coords);
     // setTimeout(resetGame, 5000);
   };
   // Players tie

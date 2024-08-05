@@ -74,7 +74,7 @@ function displayDOM(doc) {
   // Disable buttons for round win
   const playerWin = (coords) => {
     console.log(coords);
-    coords.forEach(coord => table.children[coord[0]].children[coord[1]].style.backgroundColor = 'lightgreen');
+    coords.forEach(coord => table.children[coord[0]].children[coord[1]].style.animation = 'win 1s ease-out forwards');
   }
 
   return {

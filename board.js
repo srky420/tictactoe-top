@@ -41,15 +41,23 @@ function GameBoard() {
 
   // Check for win
   const checkForWin = (player) => {
+    let coords = []
+
     // Check horizontally
-    let row = board.find((row) => row.every((col) => col.getValue() === player));
-    if (row) {
-      let index = board.indexOf(row);
-      return { win: true, coords: [[index, 0], [index, 1], [index, 2]] };
+    for (let i = 0; i < 3; i++) {
+      let win = true;
+      for (let j = 0; j < 3; j++) {
+        if (board[i][j].getValue() !== player) {
+          win = false;
+        }
+        coords.push([i, j]);
+      }
+      if (win) return { win: true, coords: coords };
+      coords = [];
     }
 
     // Check vertically
-    let coords = []
+    coords = [];
     for (let i = 0; i < 3; i++) {
       let win = true;
       for (let j = 0; j < 3; j++) {
@@ -59,6 +67,7 @@ function GameBoard() {
         coords.push([j, i]);
       }
       if (win) return { win: true, coords: coords };
+      coords = [];
     }
 
     // Check diagonally
@@ -70,6 +79,7 @@ function GameBoard() {
       coords.push([i, i]);
       if (i === 2) return { win: true, coords: coords };
     }
+    coords = [];
     for (let i = 0; i < 3; i++) {
       if (board[i][2 - i].getValue() !== player) {
         break;
