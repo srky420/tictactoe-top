@@ -41,7 +41,7 @@ function GameBoard() {
 
   // Check for win
   const checkForWin = (player) => {
-    let coords = []
+    let coords = [];
 
     // Check horizontally
     for (let i = 0; i < 3; i++) {

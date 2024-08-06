@@ -97,7 +97,7 @@ td {
   }
   100% {
     transform: scale(1);
-    background-color: lightgreen;
+    background-color: lightgray;
   }
 }
 
@@ -138,7 +138,8 @@ dialog {
   box-shadow: 0 5px 10px 0 grey;
   transform: scaleX(0);
   transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out,
-    overlay 0.25s ease-in-out allow-discrete, display 0.25s ease-in-out allow-discrete;
+    overlay 0.25s ease-in-out allow-discrete,
+    display 0.25s ease-in-out allow-discrete;
 }
 
 @starting-style {
